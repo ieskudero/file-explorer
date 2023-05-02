@@ -1,0 +1,40 @@
+.contextMenuContainer {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--mainColor);
+	border-radius: 2.5px;
+	position: fixed;
+    padding: 0.5vh;
+	width: 10vw;
+	min-width: 250px;
+    background: var(--mainBackgroundColor);
+}
+
+.contextMenuItem {
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+	padding-left: 2vh;
+	color: var(--mainColor);
+	background: var(--mainBackgroundColor);
+	align-items: center;
+}
+
+.contextMenuItem:hover {
+	color: var(--mainBackgroundColor);
+	background: var(--mainColor);
+	cursor: pointer;
+}
+
+.contextMenuIcon {
+}
+
+.contextMenuText {
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+.hl {
+	border: none;
+	border-top: 1px solid var(--mainColor);
+}

@@ -1,0 +1,30 @@
+.rightFileExplorer {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5vh;
+    max-width: 50px;
+    align-items: center;
+    height: 7vh;
+    margin: 0.5vh;
+}
+
+.rightFileExplorer:hover {
+	cursor: pointer;
+	background-color: var(--mainHoverColor);
+}
+
+.rightFileIcon {
+	font-size: 5vh;
+}
+
+.rightFileName {
+    font-size: 1.5vh;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+.selected {
+	background-color: var(--mainHoverColor);
+}

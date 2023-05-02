@@ -1,0 +1,73 @@
+/* override to change style */
+:root {
+	--mainColor: #9a9a9a;
+	--mainHoverColor: #dddddd;
+	--mainBackgroundColor: #f9f9f9;
+}
+
+/* MATERIAL ICONS */ 
+@font-face {
+    font-family: "Icon";
+    src: url("../../resources/MaterialIcons-Regular.woff2") format("woff2");
+}
+
+.material-icons {
+    font-family: Icon;
+    font-size: 25px;
+    color: #7e7c7c;
+}
+
+
+.fileExplorerContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+    background-color: var(--mainBackgroundColor);
+}
+
+.sidesContainer,.leftContainer {
+	height: 100%;
+	flex: 0.85;
+	flex-direction: column;
+	display: flex;
+}
+
+.leftContainer {
+	flex: 0.15;
+}
+
+#leftExplorerSide {
+    color: var(--mainColor);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background: white;
+    height: 100%;
+}
+
+#rightExplorerSide {
+	color: var(--mainColor);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    height: 100%;
+}
+
+#toolBarContainer {
+	width: 100%;
+	display: flex;
+	min-height: 25px;
+	height: 5vh;
+    background: var(--mainColor);
+}
+
+#pathToolBar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-left: 2vh;
+    font-size: 2.5vh;
+    color: white;
+}

@@ -1,0 +1,24 @@
+.leftFolderExplorer {
+	display: flex;
+	padding: 2vh;
+	min-height: 50px;
+	align-items: center;
+}
+
+.leftFolderExplorer:hover {
+	cursor: pointer;
+	background-color: var(--mainBackgroundColor);
+}
+
+.leftFolderIcon {
+
+}
+
+.leftFolderName {
+	margin-left: 5vh;
+    font-size: 2vh;
+}
+
+.leftSelected {
+	background-color: var(--mainBackgroundColor);
+}
