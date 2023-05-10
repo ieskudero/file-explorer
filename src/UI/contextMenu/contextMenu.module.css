@@ -26,9 +26,6 @@
 	cursor: pointer;
 }
 
-.contextMenuIcon {
-}
-
 .contextMenuText {
 	margin-left: 15px;
 	font-size: 14px;
@@ -38,3 +35,17 @@
 	border: none;
 	border-top: 1px solid var(--mainColor);
 }
+
+.contextMenuIcon {
+	width: 1vw;
+	height: 1vw;
+	background-size: 100% 100%;
+}
+
+.cutIcon { background-image: url("/resources/icons/cut.svg"); }
+.copyIcon { background-image: url("/resources/icons/copy.svg"); }
+.pasteIcon { background-image: url("/resources/icons/paste.svg"); }
+.deleteIcon { background-image: url("/resources/icons/delete.svg"); }
+.downloadIcon { background-image: url("/resources/icons/download.svg"); }
+.renameIcon { background-image: url("/resources/icons/rename.svg"); }
+.newFolderIcon { background-image: url("/resources/icons/newFolder.svg"); }

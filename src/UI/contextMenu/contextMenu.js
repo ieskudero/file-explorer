@@ -28,6 +28,7 @@ export class ContextMenu extends ControlTemplate {
 
 	_show( e ) {
 		e.preventDefault();
+		e.stopPropagation();
 
 		if( !this.panel.container ) return;
 
@@ -35,7 +36,7 @@ export class ContextMenu extends ControlTemplate {
 		if( this._contextMenuHtml ) this._hide();
 
 		//manage selection if no selected element
-		if( this.panel.selected.length === 0 ) this.panel._manageSelection( e );
+		this.panel._manageSelection( e );
 
 		//show context menu
 		this._contextMenuHtml = this._addHtml( this.container, html );
@@ -57,10 +58,8 @@ export class ContextMenu extends ControlTemplate {
 			download.remove();
 			hbars.forEach( hbar => hbar.remove() );		
 		} else {
-			const newFile = this._contextMenuHtml.querySelector( '[data-action="newFile"]' );
 			const newFolder = this._contextMenuHtml.querySelector( '[data-action="newFolder"]' );
 			const hbar1 = this._contextMenuHtml.querySelector( '#hbar1' );
-			newFile.remove();
 			newFolder.remove();
 			hbar1.remove();
 		}
@@ -125,9 +124,9 @@ export class ContextMenu extends ControlTemplate {
 	}
 
 	async _itemClicked( e ) {
+		e.stopPropagation();
 		const action = e.currentTarget.dataset.action;
 		switch ( action ) {
-			case 'newFile': await this._methods.newFile( e ); break;
 			case 'newFolder': await this._methods.newFolder( e ); break;
 			case 'cut': await this._methods.cut( e ); break;
 			case 'copy': await this._methods.copy( e ); break;

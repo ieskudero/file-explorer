@@ -1,6 +1,9 @@
 const { merge } = require( 'webpack-merge' );
 const webpackConfigBase = require( './webpack.base.config.js' );
 
+const path = require( 'path' );
+const express = require( 'express' );
+
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
@@ -24,7 +27,8 @@ const webpackConfigDev = {
 	devServer: {
 		static: './dist',
 		hot: false,
-		setupMiddlewares: ( middlewares, devServer ) => {		
+		setupMiddlewares: ( middlewares, devServer ) => {
+			devServer.app.use( '/resources/', express.static( path.resolve( __dirname, './resources' ) ) );
 
 			return middlewares;
 		},

@@ -68,8 +68,8 @@ export class LeftSide extends ControlTemplate {
 		const folders = document.querySelectorAll( '.leftFolderExplorer' );
 		
 		//open-close icon
-		folders.forEach( f => f.children[0].innerText = 'folder' );
-		folderHtml.children[0].innerText = 'folder_open';
+		folders.forEach( f => f.children[0].style.backgroundImage = 'url("/resources/icons/folder_close.svg")' );
+		folderHtml.children[0].style.backgroundImage = 'url("/resources/icons/folder_open.svg")';
 
 		//selected
 		folders.forEach( f => f.classList.remove( 'leftSelected' ) );

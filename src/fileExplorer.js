@@ -58,8 +58,8 @@ export class FileExplorer extends ControlTemplate {
 		//we show left list  with this folders
 		const containerId = 'rightExplorerSide';
 		this._rightSide = new RightSide( containerId, this._cache );
-		this._rightSide.folderClicked = async ( folder ) => await this._rightFolderClicked( folder );
-		this._rightSide.fileClicked = async ( folder ) => await this._rightFileClicked( folder );
+		this._rightSide.folderDblClicked = async ( folder ) => await this._rightDblFolderClicked( folder );
+		this._rightSide.fileDblClicked = async ( folder ) => await this._rightDblFileClicked( folder );
 
 		//add ContextMenu
 		this._initContextMenu( this._rightSide );
@@ -111,7 +111,7 @@ export class FileExplorer extends ControlTemplate {
 		this._toolBar.show( folder.path );
 	}
 
-	async _rightFolderClicked( folder ) {
+	async _rightDblFolderClicked( folder ) {
 		
 		Loading.show( 'Loading folders...' );
 
@@ -125,7 +125,7 @@ export class FileExplorer extends ControlTemplate {
 		Loading.hide();
 	}
 
-	async _rightFileClicked( file ) {
+	async _rightDblFileClicked( file ) {
 		//TODO: download file
 	}
 

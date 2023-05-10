@@ -12,8 +12,8 @@ export class RightSide extends ControlTemplate {
 		this.selected = [];
 
 		//OVERRIDE EVENTS. THIS METHODS ARE CALLBACKS THAT NEEEDS TO BE IMPLEMENTED
-		this.folderClicked = async ( /* folder */ ) => { throw new Error( 'folderClicked not implemented' ); };
-		this.fileClicked = async ( /* folder */ ) => { throw new Error( 'folderClicked not implemented' ); };
+		this.folderDblClicked = async ( /* folder */ ) => { throw new Error( 'folderDblClicked not implemented' ); };
+		this.fileDblClicked = async ( /* folder */ ) => { throw new Error( 'fileDblClicked not implemented' ); };
 		
 		//add folder css
 		this._addStyle( 'rightFolderExplorer', css );
@@ -49,7 +49,7 @@ export class RightSide extends ControlTemplate {
 		if( folder.path.includes( '/' ) ) {
 			const element = this._strToHTML( html );
 			parent.appendChild( element );
-			element.children[0].innerText = 'arrow_back';
+			element.children[0].style.backgroundImage = 'url("/resources/icons/back.svg")';
 			element.children[1].innerText =  ' .. ';
 			element.dataset.path = folder.path.split( '/' ).slice( 0, -1 ).join( '/' );
 			element.title = 'back';
@@ -66,8 +66,9 @@ export class RightSide extends ControlTemplate {
 			parent.appendChild( element );
 
 			//set icon
-			f.type ===  TYPES.FOLDER ? element.children[0].innerText = 'folder' : element.children[0].innerText = 'insert_drive_file';
-
+			const icon = f.type ===  TYPES.FOLDER ? 'folder_close.svg' : 'file.svg';
+			element.children[0].style.backgroundImage = `url("/resources/icons/${ icon }")`;
+			
 			//set name
 			element.children[1].innerText =  name;
 			
@@ -123,8 +124,8 @@ export class RightSide extends ControlTemplate {
 		const path = fileHtml.dataset.path;
 		const element = this._cache.getFolder( path );
 
-		if( element.type === TYPES.FOLDER ) await this.folderClicked( element );
-		else await this.fileClicked( element );
+		if( element.type === TYPES.FOLDER ) await this.folderDblClicked( element );
+		else await this.fileDblClicked( element );
 	}
 
 	_clearContent() {

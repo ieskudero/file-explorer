@@ -1,7 +1,8 @@
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const CaseSensitivePathsPlugin = require( 'case-sensitive-paths-webpack-plugin' );
-  
+const CopyPlugin = require( 'copy-webpack-plugin' );
+
 module.exports = ( dev ) => {
 	return {
 		output: {
@@ -10,7 +11,7 @@ module.exports = ( dev ) => {
 			library: {
 				name: 'library',
 				type: 'assign-properties'
-			}
+			},
 		},
 		resolve: {
 			fallback: {
@@ -47,8 +48,7 @@ module.exports = ( dev ) => {
 				{ /* IMPORT FOR CSS FILES. CSS FILES THAT ARE ADDED FROM WEBPACK & CSS FILES */
 					test: /\.css$/,
 					use: [ {
-						loader: MiniCssExtractPlugin.loader,
-						options: {}
+						loader: MiniCssExtractPlugin.loader
 					}, {
 						loader: 'css-loader',
 						options: { sourceMap: dev }
@@ -68,7 +68,12 @@ module.exports = ( dev ) => {
 			]
 		},
 		plugins: [
-			new CaseSensitivePathsPlugin()
+			new CaseSensitivePathsPlugin(),
+			new CopyPlugin( {
+				patterns: [
+					{ from: 'resources', to: 'resources' },
+				],
+			} )
 		],
 		stats: {
 			colors: true

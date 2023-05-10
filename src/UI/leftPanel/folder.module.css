@@ -1,7 +1,6 @@
 .leftFolderExplorer {
 	display: flex;
 	padding: 2vh;
-	min-height: 50px;
 	align-items: center;
 }
 
@@ -11,7 +10,10 @@
 }
 
 .leftFolderIcon {
-
+	width: var(--iconsize);
+	height: var(--iconsize);
+	background-image: url("/resources/icons/folder_close.svg");
+	background-size: 100% 100%;
 }
 
 .leftFolderName {
