@@ -1,7 +1,7 @@
 {
-    "name": "file-explorer",
+    "name": "folder-explorer",
     "version": "1.0.0",
-    "description": "File explorer",
+    "description": "Folder explorer",
     "main": "./dist/main.js",
 	"files": [ "dist" ],
     "scripts": {
@@ -15,13 +15,13 @@
         "type": "git",
         "url": "git@github.com:ieskudero/file-explorer.git"
     },
-    "keywords": ["file explorer", "file manager", "file", "javascript", "UI"],
+    "keywords": ["folder explorer","file explorer", "file manager", "file", "folder", "javascript", "UI"],
     "author": "Ibon Eskudero",
-    "license": "MIT",  
+    "license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ieskudero/file-explorer/issues"
+		"url": "https://github.com/ieskudero/folder-explorer/issues"
 	  },
-	"homepage": "https://ieskudero.github.io/file-explorer/",
+	"homepage": "https://ieskudero.github.io/folder-explorer/",
     "devDependencies": {
         "buffer": "6.0.3",
         "crypto-browserify": "3.12.0",

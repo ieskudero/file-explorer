@@ -9,7 +9,7 @@ import { Loading } from './UI/loading/loading';
 import { ContextMenu } from './UI/contextMenu/contextMenu';
 import { PathToolbar } from './UI/toolBar/pathToolbar';
 
-export class FileExplorer extends ControlTemplate {
+export class FolderExplorer extends ControlTemplate {
 
 	constructor( api, containerId ) {
 		super();
@@ -25,7 +25,7 @@ export class FileExplorer extends ControlTemplate {
 		this.container.innerHTML = '';
 
 		//load styles
-		this._addStyle( 'fileExplorer', css );
+		this._addStyle( 'folderExplorer', css );
 
 		//load html
 		this._addHtml( this.container, html );

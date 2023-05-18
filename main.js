@@ -1,16 +1,16 @@
 /** 
- * @module file-explorer
- * @description File Explorer with User Interface. To use it some methods must be implemented to load files and to get the file content.
+ * @module folder-explorer
+ * @description Folder Explorer with User Interface. To use it some methods must be implemented to load files and to get folder content.
 */
 
-import { FileExplorer } from './src/fileExplorer';
+import { FolderExplorer } from './src/folderExplorer';
 import { API } from './src/api';
 
 /**
- * @property {class} FileExplorer Main object
+ * @property {class} FolderExplorer Main object
  * @property {class} API API class to be extended
  */
 export {
-	FileExplorer,
+	FolderExplorer,
 	API
 };

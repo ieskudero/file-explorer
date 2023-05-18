@@ -1,14 +1,14 @@
 import { ApiTest } from './apiTest.js';
-import { FileExplorer } from '../src/fileExplorer.js';
+import { FolderExplorer } from '../src/folderExplorer.js';
 
 class Example {
 	constructor() {
 		this.api = new ApiTest();
-		this.fileExplorer = new FileExplorer( this.api, 'fileExplorerContainer' );
+		this.FolderExplorer = new FolderExplorer( this.api, 'folderExplorerContainer' );
 	}
 
 	async init() {
-		await this.fileExplorer.init();
+		await this.FolderExplorer.init();
 	}
 }
 
