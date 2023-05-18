@@ -125,7 +125,7 @@ export class FileExplorer extends ControlTemplate {
 		Loading.hide();
 	}
 
-	async _rightDblFileClicked( file ) {
+	async _rightDblFileClicked( /* file */ ) {
 		//TODO: download file
 	}
 

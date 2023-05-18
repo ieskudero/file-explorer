@@ -1,4 +1,3 @@
-import { ControlTemplate } from '../controlTemplate';
 import css from './loading.module.css';
 
 export class Loading {

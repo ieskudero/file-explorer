@@ -9,7 +9,7 @@ export class ContextMenuMethods {
 	async paste( /* e */ ) { new Error( 'Method not implemented' ); }
 	async delete( /* e */ ) { new Error( 'Method not implemented' ); }
 	async rename( /* e */ ) { new Error( 'Method not implemented' ); }
-	async download( e ) {
+	async download( /* e */ ) {
 		
 		const selected = this._contextMenu.panel.selected;
 		if( selected.length === 0 ) return;
